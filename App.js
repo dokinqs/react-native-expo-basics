@@ -17,30 +17,32 @@ export default class App extends Component {
     Alert.alert("Pressed Button!");
   }
 
-  componentDidMount() {
-    return fetch("https://facebook.github.io/react-native/movies.json")
-      .then(resp => resp.json())
-      .then((respJson) => {
-        this.setState({
-          dataSource: respJson.movies
-        }) 
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }
-
-  // async componentDidMount() {
-  //   try {
-  //     let response = await fetch(
-  //       "https://facebook.github.io/react-native/movies.json"
-  //     );
-  //     let respJson = await resp.json();
-  //     return respJson.movies;
-  //   } catch(err) {
-  //     console.error(err);
-  //   }
+  // componentDidMount() {
+  //   return fetch("https://facebook.github.io/react-native/movies.json")
+  //     .then(resp => resp.json())
+  //     .then((respJson) => {
+  //       this.setState({
+  //         dataSource: respJson.movies
+  //       }) 
+  //     })
+  //     .catch((err) => {
+  //       console.error(err);
+  //     });
   // }
+
+  async componentDidMount() {
+    try {
+      let resp = await fetch(
+        "https://facebook.github.io/react-native/movies.json"
+      );
+      let respJson = await resp.json();
+      this.setState({
+        dataSource: respJson.movies
+      }) 
+    } catch(err) {
+      console.error(err);
+    }
+  }
 
   render() {
     let pic = {
