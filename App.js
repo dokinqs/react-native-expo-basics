@@ -1,38 +1,9 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Image, Button, Alert, TouchableHighlight } from "react-native";
 import { ScrollView, FlatList } from "./node_modules/react-native-gesture-handler";
-
-class Blink extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isShowingText: true
-    };
-
-    setInterval(() => {
-      this.setState(prevState => {
-        return {
-          isShowingText: !prevState.isShowingText
-        };
-      });
-    }, 500);
-  }
-
-  render() {
-    let display = this.state.isShowingText ? this.props.text : " ";
-    return (
-      <Text>{display}</Text>
-    )
-  }
-}
-
-class Greeting extends Component {
-  render() {
-    return (
-      <Text>Hallo {this.props.name}!</Text>
-    );
-  }
-}
+import Blink from './components/Blink';
+import Greeting from './components/Greeting';
+import styles from './style';
 
 export default class App extends Component {
   constructor(props) {
@@ -148,37 +119,3 @@ export default class App extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 4,
-    backgroundColor: "#83c6d1",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 40
-  },
-  title: {
-    fontFamily: "Avenir",
-    fontWeight: "bold",
-    fontSize: 30,
-  },
-  touch: {
-    fontFamily: "Avenir", 
-    fontSize: 20, 
-    fontWeight: "900", 
-    padding: 5, 
-    color: "#33818e"
-  },
-  image: {
-    width: 250, 
-    height: 250, 
-    margin: 10
-  },
-  flatlist: {
-    fontFamily: "Avenir", 
-    fontSize: 20, 
-    fontWeight: "600", 
-    textAlign: "center", 
-    marginTop: 10
-  }
-});
