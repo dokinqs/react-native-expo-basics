@@ -23,8 +23,8 @@ export default StyleSheet.create({
         color: "#33818e"
     },
     image: {
-        width: 200, 
-        height: win.height / 4, 
+        width: 260, 
+        height: win.height / 3, 
         margin: 10
     },
     flatlist: {
