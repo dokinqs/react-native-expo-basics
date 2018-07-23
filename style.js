@@ -8,7 +8,7 @@ export default StyleSheet.create({
         // backgroundColor: "#83c6d1",
         alignItems: "center",
         justifyContent: "center",
-        padding: 40
+        padding: 30
     },
     title: {
         fontFamily: "Avenir",
@@ -23,9 +23,9 @@ export default StyleSheet.create({
         color: "#33818e"
     },
     image: {
-        width: 260, 
+        width: 255, 
         height: win.height / 3, 
-        margin: 10
+        margin: 5
     },
     flatlist: {
         fontFamily: "Avenir", 
