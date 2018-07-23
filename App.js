@@ -1,5 +1,13 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, Image, Button, Alert, TouchableHighlight } from "react-native";
+import { 
+  StyleSheet, 
+  Text, 
+  View, 
+  TouchableHighlight,
+  Alert, 
+  Image, 
+  Button
+} from "react-native";
 import { ScrollView, FlatList } from "./node_modules/react-native-gesture-handler";
 import Blink from './components/Blink';
 import Greeting from './components/Greeting';
@@ -74,7 +82,6 @@ export default class App extends Component {
             style={styles.image}
           />
           <Greeting name="Karen" />
-          <Greeting name="Anonymous" />
           <Blink text="@dokinqs" />
         </View>
 
@@ -91,7 +98,7 @@ export default class App extends Component {
           </ScrollView>
         </View>
 
-        <View style={{flex: 1, backgroundColor: "#d5ebef"}} />
+        <View style={{flex: 0.5, backgroundColor: "#d5ebef"}} />
 
         <Button
           onPress={this._onPressButton}

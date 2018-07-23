@@ -1,4 +1,6 @@
-import React, { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const win = Dimensions.get('window');
 
 export default StyleSheet.create({
     container: {
@@ -21,8 +23,8 @@ export default StyleSheet.create({
         color: "#33818e"
     },
     image: {
-        width: 250, 
-        height: 250, 
+        width: 200, 
+        height: win.height / 4, 
         margin: 10
     },
     flatlist: {
